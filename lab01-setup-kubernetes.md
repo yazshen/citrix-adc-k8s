@@ -84,7 +84,12 @@ TBD.
 
 运行命令: sudo apt-get update -y
 
+运行命令: sudo apt-get upgrade -y
+
 ![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-09.png)
+
+Linux系统配置完成。
+
 
 
 
