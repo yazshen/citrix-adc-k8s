@@ -90,6 +90,99 @@ TBD.
 
 Linux系统配置完成。
 
+## 7. Master，Worker上Kubernetes安装
+
+安装必要组件
+
+运行命令: sudo apt-get install apt-transport-https ca-certificates curl software-properties-common -y
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-10.png)
+
+添加Docker所需要的GPG Key
+
+运行命令: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-11.png)
+
+添加Docker仓库
+
+运行命令: sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-12.png)
+
+更新软件包列表
+
+运行命令: sudo apt-get update -y
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-13.png)
+
+安装Docker 18.09
+
+运行命令: sudo apt-get install docker-ce=5:18.09.9~3-0~ubuntu-bionic docker-ce-cli=5:18.09.9~3-0~ubuntu-bionic -y
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-14.png)
+
+检查Docker版本
+
+运行命令: sudo docker version
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-15.png)
+
+使用国内阿里云作为Kubernetes源，添加Kubernetes的GPG Key
+
+运行命令: curl https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add -
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-16.png)
+
+使用国内阿里云作为Kubernetes源，添加Kubernetes仓库
+
+运行命令: sudo add-apt-repository "deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main"
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-17.png)
+
+更新软件包列表
+
+运行命令: sudo apt-get update -y
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-18.png)
+
+安装kubectl, kubeadm, kubectl 1.16版本
+
+运行命令: sudo apt-get install kubelet=1.16.6-00 kubeadm=1.16.6-00 kubectl=1.16.6-00 -y
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-19.png)
+
+修改Docker cgroup driver，从默认的cgroupfs改为systemd
+
+运行命令: sudo vi /etc/docker/daemon.json
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-20.png)
+
+运行命令: sudo systemctl daemon-reload
+
+运行命令: sudo systemctl restart docker
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-21.png)
+
+完成Kubernetes安装。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
