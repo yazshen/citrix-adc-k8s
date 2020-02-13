@@ -58,3 +58,29 @@ TBD.
 
 ### 6.3 Master, Worker上Linux系统配置
 
+修改系统时区为UTC+8并确认NTP同步
+
+运行命令: sudo timedatectl set-timezone Asia/Shanghai
+
+运行命令: timedatectl
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-06.png)
+
+编辑本地Host信息，静态绑定集群内所有Host信息
+
+运行命令: sudo vi /etc/hosts
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-07.png)
+
+关闭Swap：Kubernetes是一个用于大规模运行的分布式系统。在大量机器上运行大量容器时，您需要可预测性和一致性。禁用Swap是正确的方法。
+
+运行命令: sudo swapoff -a
+
+运行命令: sudo vi /etc/fstab
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-08.png)
+
+
+
+
+
