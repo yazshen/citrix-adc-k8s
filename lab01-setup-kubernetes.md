@@ -118,7 +118,7 @@ Linux系统配置完成。
 
 安装Docker 18.09
 
-运行命令: sudo apt-get install docker-ce=5:18.09.9~3-0\~ubuntu-bionic docker-ce-cli=5:18.09.9~3-0\~ubuntu-bionic -y
+运行命令: sudo apt-get install docker-ce=5:18.09.9\~3-0\~ubuntu-bionic docker-ce-cli=5:18.09.9\~3-0\~ubuntu-bionic -y
 
 ![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-14.png)
 
