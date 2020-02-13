@@ -166,10 +166,45 @@ Linux系统配置完成。
 
 完成Kubernetes安装。
 
+## 8. Master上Kubernetes配置
 
+初始化Kubernetes集群
 
+运行命令: sudo kubeadm init --image-repository='registry.cn-hangzhou.aliyuncs.com/google_containers' --pod-network-cidr=192.168.226.0/24 --apiserver-advertise-address=192.168.226.10
 
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-22.png)
 
+注意：集群初始化成功后，保存输出信息，会用于Worker加入集群
+
+运行命令: sudo mkdir -p $HOME/.kube
+
+运行命令: sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+
+运行命令: sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-23.png)
+
+由于没有安装网络插件，Node状态为NotReady
+
+运行命令: kubectl get nodes
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-24.png)
+
+安装网络插件Weave
+
+运行命令: kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')" 
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-25.png)
+
+等待约30秒后，检查集群状态
+
+运行命令: kubectl get nodes
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-26.png)
+
+Master节点配置完成。
+
+## 9. Worker上Kubernetes配置
 
 
 
