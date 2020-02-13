@@ -40,30 +40,21 @@ TBD.
 
 ![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-01.png)
 
-
 ![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-02.png)
-
-
 
 配置主机静态IP地址
 
-
 ![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-03.png)
-
 
 创建管理员帐号
 
-
 ![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-04.png)
-
 
 安装SSH服务
 
-
 ![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-05.png)
 
-
-完成安装。
+其他配置保持默认，完成安装。
 
 ### 6.3 Master, Worker上Linux系统配置
 
