@@ -206,9 +206,20 @@ Master节点配置完成。
 
 ## 9. Worker上Kubernetes配置
 
+输入刚才从Master节点上保存的命令
 
+例如，运行命令: sudo kubeadm join 192.168.226.10:6443 --token is8sc0.ntn5cwtg6hmc0npf \
+    --discovery-token-ca-cert-hash sha256:1b756d5fca53a0916652285c5c50195bba14ef5050de472bb881020110371083
 
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-27.png)
 
+回到Master节点命令行，检查集群状态
+
+运行命令: kubectl get nodes -o wide
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-28.png)
+
+至此为止，Kubernetes集群已经搭建完成，我们部署了一个Master节点和两个Worker节点。
 
 
 
