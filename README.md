@@ -11,4 +11,4 @@ Contact: yazhong.shen@citrix.com
 
 ## License
 GNU General Public License v3.0
-(https://github.com/yazshen/citrix-adc-k8s/blob/master/LICENSE)
+(https://github.com/yazshen/citrix-adc-kubernetes/blob/master/LICENSE)
