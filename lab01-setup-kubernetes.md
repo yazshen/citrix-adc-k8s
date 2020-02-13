@@ -80,6 +80,11 @@ TBD.
 
 ![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-08.png)
 
+更新系统已安装的软件包
+
+运行命令: sudo apt-get update -y
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-09.png)
 
 
 
