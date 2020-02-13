@@ -12,6 +12,8 @@ Citrix ADC(CPX) V13.0官方文档：https://docs.citrix.com/en-us/citrix-adc-cpx
 
 注册Docker免费帐号：https://hub.docker.com/
 
+Ubuntu Server下载：https://ubuntu.com/download/server
+
 ## 3. Kubernetes集群信息
 |Host                              |Linux                                |Docker                                |Kubernetes                                |
 |------------------------------------|------------------------------------|------------------------------------|------------------------------------|
@@ -32,7 +34,7 @@ TBD.
     Memory: 2 GB
     Disk: 20 GB
     
-### 6.2 Master, Worker Host安装
+### 6.2 Master, Worker上Linux系统安装
 选择系统默认语言为English
 ![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/images/lab01-setup-kubernetes-01.png)
 
@@ -43,5 +45,15 @@ TBD.
 
 创建管理员帐号
 ![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/images/lab01-setup-kubernetes-04.png)
+
+安装SSH服务
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/images/lab01-setup-kubernetes-05.png)
+
+完成安装。
+
+### 6.3 Master, Worker上Linux系统配置
+
+
+
 
 
