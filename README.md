@@ -7,7 +7,7 @@ Name: Yazhong(Robbie) Shen
 Contact: yazhong.shen@citrix.com
 
 ## Table of Contents
-
+实验一：[安装配置Kubernetes集群](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/lab01-setup-kubernetes.md)
 
 ## License
 GNU General Public License v3.0
