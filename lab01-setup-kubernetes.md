@@ -1,7 +1,7 @@
 # LAB01: 安装配置Kubernetes环境
 
 ## 1. 实验拓扑
-TBD.
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-topology.png)
 
 ## 2. 准备工作
 Kubernetes V1.16版本兼容性：https://v1-16.docs.kubernetes.io/docs/setup/release/notes/
@@ -22,7 +22,11 @@ Ubuntu Server下载：https://ubuntu.com/download/server
 |Worker2                              |Ubuntu Server 18.04.3                                |18.09                                |1.16                                |
 
 ## 4. Kubernetes Cluster Networking信息
-TBD.
+|Host                              |CNI                                |IP Address                                |Gateway                                |
+|------------------------------------|------------------------------------|------------------------------------|------------------------------------|
+|Master                              |Weave                              |192.168.226.10/24                              |192.168.226.2                              |
+|Worker1                              |Weave                              |192.168.226.11/24                              |192.168.226.2                              |
+|Worker2                              |Weave                              |192.168.226.12/24                              |192.168.226.2                              |
 
 ## 5. Citrix ADC信息
 TBD.
