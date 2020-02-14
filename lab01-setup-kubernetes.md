@@ -228,6 +228,41 @@ Master节点配置完成。
 
 至此为止，Kubernetes集群已经搭建完成，我们部署了一个Master节点和两个Worker节点。
 
+## 10. Master节点下载Citrix CPX镜像
+
+Citrix CPX 13.0镜像托管在Docker Store上。我们需要先登录Docker Store，然后Checkout。Store地址：https://hub.docker.com/_/netscaler-cpx
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-29.png)
+
+完成Checkout后，复制Pull链接: docker pull store/citrix/citrixadccpx:13.0-36.29
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-30.png)
+
+SSH登录到Master节点
+
+运行命令: sudo docker login
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-31.png)
+
+运行命令: sudo docker pull store/citrix/citrixadccpx:13.0-36.29
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-32.png)
+
+查看Image信息
+
+运行命令: sudo docker image ls
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-33.png)
+
+至此，我们完成了Kubernetes集群、下载Citrix CPX镜像。在下一个实验里面，我们会利用这个环境来验证Citrix容器解决方案。
+
+
+
+
+
+
+
+
 
 
 
