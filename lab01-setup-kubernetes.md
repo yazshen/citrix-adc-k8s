@@ -29,7 +29,10 @@ Ubuntu Server下载：https://ubuntu.com/download/server
 |Worker2                              |Weave                              |192.168.226.12/24                              |192.168.226.2                              |
 
 ## 5. Citrix ADC信息
-TBD.
+|Citrix ADC Form Factor                              |Software Version                                |
+|------------------------------------|------------------------------------|
+|Citrix ADC VPX                              |13.0-47.24                              |
+|Citrix ADC CPX                              |13.0-36.29                              |
 
 ## 6. Linux安装配置
 ### 6.1 硬件资源
