@@ -254,7 +254,99 @@ SSH登录到Master节点
 
 ![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-33.png)
 
-至此，我们完成了Kubernetes集群、下载Citrix CPX镜像。在下一个实验里面，我们会利用这个环境来验证Citrix容器解决方案。
+## 11. 部署和测试微应用
+完成Kubernetes集群后，我们来做一个简单实验，看看Kubernetes如何部署应用、外部访问。
+
+### 11. 自动补全kubectl, kubeadm命令参数
+
+在Master节点上编辑配置文件并添加如下两行命令: vi ~/.bashrc
+
+    source <(kubectl completion bash)
+    source <(kubeadm completion bash)
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-34.png)
+
+### 11.2 Worker节点创建测试页面
+
+容器本身不含有存储，需要通过VolumeMount方式挂载外部存储。在本实验内，我们使用Worker节点的本地存储来作为容器的hostPath。
+
+在Worker1、Worker2节点上分别创建目录和文件: /home/citrix/k8s/lab01/index.html
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-35.png)
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-36.png)
+
+### 11.3 Master节点部署Deployment
+
+从docker上我们知道有image, container概念，kubernetes作为集群编排系统，提出有pod, deployment, service等概念。
+
+|Kubernetes概念                              |说明                                |
+|------------------------------------|------------------------------------|
+|pod                              |kubernetes编排系统的最小单位，包含一个或多个容器                              |
+|deployment                              |kubernetes在多个worker上部署相同的pod，支持弹性扩容、负载均衡                              |
+|service                              |对指定的pod或deployment进行服务发现                              |
+
+配置文件下载: https://github.com/yazshen/citrix-adc-kubernetes/blob/master/citrix-lab01-nginx-deployment.yaml
+
+运行命令: wget https://github.com/yazshen/citrix-adc-kubernetes/blob/master/citrix-lab01-nginx-deployment.yaml
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-37.png)
+
+在这个deployment配置里面，我们实现了如下目的：创建一个nginx pod、2个副本、指定80端口来访问nginx服务、挂载Worker节点上的目录。
+
+运行命令: kubectl apply -f citrix-lab01-nginx-deployment.yaml
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-38.png)
+
+查看deployment部署状态
+
+运行命令: kubectl get deployments
+
+运行命令: kubectl get pods -o wide
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-39.png)
+
+### 11.4 集群内访问nginx服务
+
+pod生成后，会从CNI上DHCP获取一个cluster IP地址。
+
+运行命令: kubectl get pods -o wide
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-40.png)
+
+但是这个地址只能在集群内可以访问，无法通过外部网络访问。
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-41.png)
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-42.png)
+
+访问pod的nginx服务
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-43.png)
+
+### 11.5 集群内通过Service实现负载均衡并访问nginx服务
+
+Service可以通过4种方式来为pod、deployment提供服务发现：
+
+· ClusterIP: 默认方式，通过Cluster VIP来访问
+· NodePort: 通过节点地址上端口映射来访问
+· LoadBalancer: 又分OnPremise, Cloud provider Kubernetes clusters。OnPremise等同于NodePort（除非使用额外的方案例如IPAM Controller或metal LB来分配地址）
+· External Name: 映射到DNS解析
+
+运行命令: kubectl expose deployment citrix-lab01-nginx-deployment --type=ClusterIP --name=citrix-lab01-service-clusterip 
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-44.png)
+
+### 11.6 集群外通过Service实现负载均衡并访问nginx服务
+
+运行命令: kubectl expose deployment citrix-lab01-nginx-deployment --type=NodePort --name=citrix-lab01-service-nodeport --port=81 --target-port=80
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-45.png)
+
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-46.png)
+
+
+至此，我们完成了Kubernetes集群、下载Citrix CPX镜像和部署测试了微应用。在下一个实验里面，我们会利用这个环境来验证Citrix容器解决方案。
 
 
 
