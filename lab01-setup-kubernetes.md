@@ -283,7 +283,7 @@ SSH登录到Master节点
 |Kubernetes概念                              |说明                                |
 |------------------------------------|------------------------------------|
 |pod                              |kubernetes编排系统的最小单位，包含一个或多个容器                              |
-|deployment                              |kubernetes在多个worker上部署相同的pod，支持弹性扩容、负载均衡                              |
+|deployment                              |kubernetes在多个worker上部署pod副本，支持弹性扩容、负载均衡、版本管理、金丝雀等                              |
 |service                              |对指定的pod或deployment进行服务发现                              |
 
 配置文件下载: https://github.com/yazshen/citrix-adc-kubernetes/blob/master/citrix-lab01-nginx-deployment.yaml
