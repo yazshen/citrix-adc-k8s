@@ -328,10 +328,10 @@ pod生成后，会从CNI上DHCP获取一个cluster IP地址。
 
 Service可以通过4种方式来为pod、deployment提供服务发现：
 
-· ClusterIP: 默认方式，通过Cluster VIP来访问
-· NodePort: 通过节点地址上端口映射来访问
-· LoadBalancer: 又分OnPremise, Cloud provider Kubernetes clusters。OnPremise等同于NodePort（除非使用额外的方案例如IPAM Controller或metal LB来分配地址）
-· External Name: 映射到DNS解析
++ ClusterIP: 默认方式，通过Cluster VIP来访问
++ NodePort: 通过节点地址上端口映射来访问
++ LoadBalancer: 又分OnPremise, Cloud provider Kubernetes clusters。OnPremise等同于NodePort（除非使用额外的方案例如IPAM Controller或metal LB来分配地址）
++ External Name: 映射到DNS解析
 
 运行命令: kubectl expose deployment citrix-lab01-nginx-deployment --type=ClusterIP --name=citrix-lab01-service-clusterip 
 
