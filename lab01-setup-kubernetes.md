@@ -4,11 +4,11 @@
 ![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-topology.png)
 
 ## 2. 准备工作
-Kubernetes V1.16版本兼容性：https://v1-16.docs.kubernetes.io/docs/setup/release/notes/
+Kubernetes V1.19版本兼容性：https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.17.md
 
-Citrix ADC(CPX) 版本兼容性：https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/support-matrix/
+Citrix Ingress Controller 版本兼容性：https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/support-matrix/
 
-Citrix ADC(CPX) V13.0官方文档：https://docs.citrix.com/en-us/citrix-adc-cpx/13/about.html
+Citrix ADC(CPX) 版本兼容性：https://docs.citrix.com/en-us/citrix-adc-cpx/13/about.html
 
 注册Docker免费帐号：https://hub.docker.com/
 
@@ -17,9 +17,9 @@ Ubuntu Server下载：https://ubuntu.com/download/server
 ## 3. Kubernetes集群信息
 |Host                              |Linux                                |Docker                                |Kubernetes                                |
 |------------------------------------|------------------------------------|------------------------------------|------------------------------------|
-|Master                              |Ubuntu Server 18.04.3                                |18.09                                |1.16                                |
-|Worker1                              |Ubuntu Server 18.04.3                                |18.09                                |1.16                                |
-|Worker2                              |Ubuntu Server 18.04.3                                |18.09                                |1.16                                |
+|Master                              |Ubuntu Server 18.04.5                                |19.03                                |1.19                                |
+|Worker1                              |Ubuntu Server 18.04.5                                |19.03                                |1.19                                |
+|Worker2                              |Ubuntu Server 18.04.5                                |19.03                                |1.19                                |
 
 ## 4. Kubernetes Cluster Networking信息
 |Host                              |CNI                                |IP Address                                |Gateway                                |
