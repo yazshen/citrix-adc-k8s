@@ -1,7 +1,7 @@
 # LAB01: 安装配置Kubernetes环境
 
 ## 更新时间
-2020.01.16
+2021.01.16
 
 ## 1. 实验拓扑
 ![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-topology.png)
@@ -73,6 +73,7 @@ Ubuntu Server下载：https://ubuntu.com/download/server
 修改系统时区为UTC+8并确认NTP同步
 
 运行命令
+
     sudo timedatectl set-timezone Asia/Shanghai
     sudo timedatectl set-ntp true
     timedatectl
@@ -82,6 +83,7 @@ Ubuntu Server下载：https://ubuntu.com/download/server
 编辑本地Host信息，静态绑定集群内所有Host信息
 
 运行命令
+
     sudo vi /etc/hosts
 
 ![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-new-07.png)
@@ -97,6 +99,7 @@ Ubuntu Server下载：https://ubuntu.com/download/server
 更新系统已安装的软件包
 
 运行命令
+
     sudo apt-get update -y
     sudo apt-get upgrade -y
     lsb_release -a
