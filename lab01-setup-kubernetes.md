@@ -91,6 +91,7 @@ Ubuntu Server下载：https://ubuntu.com/download/server
 关闭Swap：Kubernetes是一个用于大规模运行的分布式系统。在大量机器上运行大量容器时，您需要可预测性和一致性。禁用Swap是正确的方法。
 
 运行命令
+
     sudo swapoff -a
     sudo vi /etc/fstab
 
