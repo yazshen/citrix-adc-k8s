@@ -72,33 +72,36 @@ Ubuntu Server下载：https://ubuntu.com/download/server
 
 修改系统时区为UTC+8并确认NTP同步
 
-运行命令: sudo timedatectl set-timezone Asia/Shanghai
+运行命令
+    sudo timedatectl set-timezone Asia/Shanghai
+    sudo timedatectl set-ntp true
+    timedatectl
 
-运行命令: timedatectl
-
-![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-06.png)
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-new-06.png)
 
 编辑本地Host信息，静态绑定集群内所有Host信息
 
-运行命令: sudo vi /etc/hosts
+运行命令
+    sudo vi /etc/hosts
 
-![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-07.png)
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-new-07.png)
 
 关闭Swap：Kubernetes是一个用于大规模运行的分布式系统。在大量机器上运行大量容器时，您需要可预测性和一致性。禁用Swap是正确的方法。
 
-运行命令: sudo swapoff -a
+运行命令
+    sudo swapoff -a
+    sudo vi /etc/fstab
 
-运行命令: sudo vi /etc/fstab
-
-![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-08.png)
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-new-08.png)
 
 更新系统已安装的软件包
 
-运行命令: sudo apt-get update -y
+运行命令
+    sudo apt-get update -y
+    sudo apt-get upgrade -y
+    lsb_release -a
 
-运行命令: sudo apt-get upgrade -y
-
-![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-09.png)
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-new-09.png)
 
 Linux系统配置完成。
 
