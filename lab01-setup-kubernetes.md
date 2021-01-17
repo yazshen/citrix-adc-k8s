@@ -18,24 +18,26 @@ Citrix ADC(CPX) 版本兼容性：https://docs.citrix.com/en-us/citrix-adc-cpx/1
 Ubuntu Server下载：https://ubuntu.com/download/server
 
 ## 3. Kubernetes集群信息
-|Host                              |Linux                                |Docker                                |Kubernetes                                |
+|Host |Linux |Docker |Kubernetes |
 |------------------------------------|------------------------------------|------------------------------------|------------------------------------|
-|Master                              |Ubuntu Server 18.04.5                                |19.03                                |1.19                                |
-|Worker1                              |Ubuntu Server 18.04.5                                |19.03                                |1.19                                |
-|Worker2                              |Ubuntu Server 18.04.5                                |19.03                                |1.19                                |
+|Master |Ubuntu Server 18.04.5 |19.03 |1.19 |
+|Worker1 |Ubuntu Server 18.04.5 |19.03 |1.19 |
+|Worker2 |Ubuntu Server 18.04.5 |19.03 |1.19 |
 
 ## 4. Kubernetes Cluster Networking信息
-|Host                              |CNI                                |IP Address                                |Gateway                                |
-|------------------------------------|------------------------------------|------------------------------------|------------------------------------|
-|Master                              |Weave                              |192.168.201.11/24                              |192.168.201.254                              |
-|Worker1                              |Weave                              |192.168.201.12/24                              |192.168.201.254                              |
-|Worker2                              |Weave                              |192.168.201.13/24                              |192.168.201.254                              |
+|Host |IP Address(MGMT) |Gateway |CNI |IP Address(DATA) |
+|------------------------------------|------------------------------------|------------------------------------|------------------------------------|------------------------------------|
+|Master |192.168.204.11/24 |192.168.201.254 |Flannel |192.168.204.11/24 |
+|Worker1 |192.168.204.12/24 |192.168.201.254 |Flannel |192.168.204.12/24 |
+|Worker2 |192.168.204.13/24 |192.168.201.254 |Flannel |192.168.204.13/24 |
+
 
 ## 5. Citrix ADC信息
-|Citrix ADC Form Factor                              |Software Version                                |
+|Citrix Platform |Software Version |
 |------------------------------------|------------------------------------|
-|Citrix ADC VPX                              |13.0-47.24                              |
-|Citrix ADC CPX                              |13.0-36.29                              |
+|Citrix ADM |13.0-71.40 |
+|Citrix ADC VPX |13.0-71.40 |
+|Citrix ADC CPX |13.0-36.29 |
 
 ## 6. Linux安装配置
 ### 6.1 硬件资源
