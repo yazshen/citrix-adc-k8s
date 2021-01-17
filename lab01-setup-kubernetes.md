@@ -7,7 +7,7 @@
 ![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-topology.png)
 
 ## 2. 准备工作
-Kubernetes V1.19版本兼容性：https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.17.md
+Kubernetes V1.19版本兼容性(1.17版本开始支持Docker 19.03)：https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.17.md
 
 Citrix Ingress Controller 版本兼容性：https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/support-matrix/
 
