@@ -280,7 +280,7 @@ Linux系统配置完成。
 
     kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
 
-![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-28.png)
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-new-28.png)
 
 等待约30秒后，检查集群状态
 
@@ -288,7 +288,7 @@ Linux系统配置完成。
 
     kubectl get nodes
 
-![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-29.png)
+![LAB01: Setup Kubernetes](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/images/lab01-setup-kubernetes-new-29.png)
 
 Master节点配置完成。
 
