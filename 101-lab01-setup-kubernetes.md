@@ -1,7 +1,7 @@
 # LAB01: 安装配置Kubernetes环境
 
 ## 更新时间
-2021.01.21
+2021.01.23
 
 ## 1. 实验拓扑
 ![LAB01: Setup Kubernetes](./images/101-lab01-topology.png)
@@ -25,7 +25,7 @@ Ubuntu Server下载：https://ubuntu.com/download/server
 |Worker2 |Ubuntu Server 18.04.5 |19.03 |1.19 |
 
 ## 4. Kubernetes Cluster Networking信息
-|Host |IP Address(MGMT) |Gateway |CNI |IP Address(Control-Plane) |
+|Host |IP Address(MGMT) |Gateway |CNI |IP Address |
 |------------------------------------|------------------------------------|------------------------------------|------------------------------------|------------------------------------|
 |Master |192.168.204.11/24 |192.168.201.254 |Weave |192.168.204.11/24 |
 |Worker1 |192.168.204.12/24 |192.168.201.254 |Weave |192.168.204.12/24 |
@@ -36,8 +36,7 @@ Ubuntu Server下载：https://ubuntu.com/download/server
 |Citrix Platform |Software Version |
 |------------------------------------|------------------------------------|
 |Citrix ADM |13.0-71.40 |
-|Citrix ADC VPX |13.0-71.40 |
-|Citrix ADC CPX |13.0-36.29 |
+|Citrix ADC |13.0-71.40 |
 
 ## 6. Linux安装配置
 ### 6.1 硬件资源
