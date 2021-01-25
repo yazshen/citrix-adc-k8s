@@ -199,9 +199,10 @@ kubectl get svc -o wide
 
 ![](./images/101-lab2-k8s-deploy-application-18.png)
 
-在集群外的Pod-Network设备上通过curl命令访问集群的Node IP检查应用访问，尝试多次然后比较一下输出结果
+登录到Citrix ADC(VPX)设备，然后通过curl命令访问集群的Node IP+端口检查应用访问，尝试多次然后比较一下输出结果
 
 ```
+shell
 curl http://192.168.204.11:30052
 ...
 curl http://192.168.204.11:30052
