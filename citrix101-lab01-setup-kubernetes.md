@@ -25,7 +25,7 @@ Ubuntu Server下载：https://ubuntu.com/download/server
 |Worker2 |Ubuntu Server 18.04.5 |19.03 |1.19 |
 
 ## 4. Kubernetes Cluster Networking信息
-|Host |IP Address(MGMT) |Gateway |CNI |IP Address |
+|Host |IP Address(OOB Network) |Gateway |CNI |IP Address(Node Network) |
 |------------------------------------|------------------------------------|------------------------------------|------------------------------------|------------------------------------|
 |Master |192.168.204.11/24 |192.168.201.254 |Weave |192.168.204.11/24 |
 |Worker1 |192.168.204.12/24 |192.168.201.254 |Weave |192.168.204.12/24 |
