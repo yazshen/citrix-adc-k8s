@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: citrix101-lab02-nginx-deployment
+  labels:
+    app: citrix101-lab02-nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: citrix101-lab02-nginx
+  template:
+    metadata:
+      labels:
+        app: citrix101-lab02-nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        volumeMounts:
+        - mountPath: /usr/share/nginx/html
+          name: citrix101-lab02-nginx
+        ports:
+        - containerPort: 80
+      volumes:
+      - name: citrix101-lab02-nginx
+        hostPath:
+          path: /home/citrix/k8s/lab02

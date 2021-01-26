@@ -13,9 +13,11 @@ Citrix Ingress Controller 版本兼容性：https://developer-docs.citrix.com/pr
 
 Citrix ADC(CPX) 版本兼容性：https://docs.citrix.com/en-us/citrix-adc-cpx/13/about.html
 
-注册Docker免费帐号：https://hub.docker.com/
-
 Ubuntu Server下载：https://ubuntu.com/download/server
+
+Docker Hub仓库：https://hub.docker.com/
+
+Redhat Quay仓库：https://quay.io/
 
 ## 3. Kubernetes集群信息
 |Host |Linux |Docker |Kubernetes |
@@ -36,7 +38,9 @@ Ubuntu Server下载：https://ubuntu.com/download/server
 |Citrix Platform |Software Version |
 |------------------------------------|------------------------------------|
 |Citrix ADM |13.0-71.40 |
-|Citrix ADC |13.0-71.40 |
+|Citrix ADC(VPX) |13.0-71.40 |
+|Citrix ADC(CPX) |13.0-71.40 |
+|Citrix Ingress Controller |1.12.2 |
 
 ## 6. Linux安装配置
 ### 6.1 硬件资源
