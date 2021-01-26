@@ -1,13 +1,15 @@
 # LAB01: 安装配置Kubernetes环境
 
 ## 更新时间
-2021.01.23
+2021.01.26
 
 ## 1. 实验拓扑
 ![LAB01: Setup Kubernetes](./images/101-lab01-topology.png)
 
 ## 2. 准备工作
 Kubernetes V1.19版本兼容性(1.17版本开始支持Docker 19.03)：https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.17.md
+
+Kubernetes V1.19集群容量规划：https://v1-19.docs.kubernetes.io/zh/docs/setup/best-practices/cluster-large/
 
 Citrix Ingress Controller 版本兼容性：https://developer-docs.citrix.com/projects/citrix-k8s-ingress-controller/en/latest/support-matrix/
 
@@ -27,11 +29,11 @@ Redhat Quay仓库：https://quay.io/
 |Worker2 |Ubuntu Server 18.04.5 |19.03 |1.19 |
 
 ## 4. Kubernetes Cluster Networking信息
-|Host |IP Address(OOB Network) |Gateway |CNI |IP Address(Node Network) |
+|Host |IP Address(OOB Network) |Gateway |IP Address(Node Network) |CNI |
 |------------------------------------|------------------------------------|------------------------------------|------------------------------------|------------------------------------|
-|Master |192.168.204.11/24 |192.168.201.254 |Weave |192.168.204.11/24 |
-|Worker1 |192.168.204.12/24 |192.168.201.254 |Weave |192.168.204.12/24 |
-|Worker2 |192.168.204.13/24 |192.168.201.254 |Weave |192.168.204.13/24 |
+|Master |192.168.201.11/24 |192.168.201.254 |192.168.204.11/24 |Weave |
+|Worker1 |192.168.201.12/24 |192.168.201.254 |192.168.204.12/24 |Weave |
+|Worker2 |192.168.201.13/24 |192.168.201.254 |192.168.204.13/24 |Weave |
 
 
 ## 5. Citrix ADC信息
