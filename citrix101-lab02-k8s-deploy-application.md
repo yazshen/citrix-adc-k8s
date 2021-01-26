@@ -221,3 +221,17 @@ curl http://10.101.41.135:81
 ![](./images/101-lab2-k8s-deploy-application-20.png)
 
 至此，我们完成了Kubernetes应用发布、部署、集群内负载均衡访问、集群外负载均衡访问等。
+
+## 附1: 查看当前Cluster IP Range
+
+默认为10.96.0.0/12
+
+```
+sudo cat /etc/kubernetes/manifests/kube-apiserver.yaml | grep range
+```
+
+## 附2: 查看当前NodePort Port Range
+
+默认为3000 - 32767
+
+可以编辑kube-apiserver.yaml文件，修改参数"--service-node-port-range"
