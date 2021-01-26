@@ -15,6 +15,8 @@ Contact: yazhong.shen@citrix.com
 
 实验2: [Kubernetes基本应用与部署](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/citrix101-lab02-k8s-deploy-application.md)
 
+实验3: [统一入口部署模式(Unified Ingress)](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/citrix101-lab03-unified-ingress.md)
+
 ## License
 GNU General Public License v3.0
 (https://github.com/yazshen/citrix-adc-kubernetes/blob/master/LICENSE)
