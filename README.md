@@ -8,7 +8,7 @@ Contact: yazhong.shen@citrix.com
 
 ## Table of Contents
 ### Archive
-实验(K8S V1.16版本)：[安装配置Kubernetes集群](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/lab01-setup-kubernetes-old.md)
+~~实验(K8S V1.16版本)：[安装配置Kubernetes集群](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/lab01-setup-kubernetes-old.md)~~
 
 ### Citrix ADC on Kubernetes 101
 实验1: [安装配置Kubernetes集群](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/citrix101-lab01-setup-kubernetes.md)
