@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: citrix101-lab04-demo01-ingress-vpx
+  annotations:
+   kubernetes.io/ingress.class: "citrix"
+   ingress.citrix.com/insecure-termination: "redirect"
+   # change the frontend-ip to the VIP you want to create
+   ingress.citrix.com/frontend-ip: "192.168.203.15"
+spec:
+  rules:
+  - host:  lab04-demo01.example.com
+    http:
+      paths:
+      - path:
+        backend:
+          serviceName: citrix101-lab04-demo01-cpx-service
+          servicePort: 80
