@@ -17,6 +17,8 @@ Contact: yazhong.shen@citrix.com
 
 实验3: [统一入口部署模式(Unified Ingress)](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/citrix101-lab03-unified-ingress.md)
 
+实验4: [两层式负载均衡部署模式(Dual Tier)](https://github.com/yazshen/citrix-adc-kubernetes/blob/master/citrix101-lab04-dual-tier.md)
+
 ## License
 GNU General Public License v3.0
 (https://github.com/yazshen/citrix-adc-kubernetes/blob/master/LICENSE)
