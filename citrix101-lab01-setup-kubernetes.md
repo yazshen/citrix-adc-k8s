@@ -43,6 +43,7 @@ Redhat Quay仓库：https://quay.io/
 |Citrix ADC(VPX) |13.0-71.40 |
 |Citrix ADC(CPX) |13.0-71.40 |
 |Citrix Ingress Controller |1.12.2 |
+|Citrix ADC Metric Exporter |1.4.6 |
 
 ## 6. Linux安装配置
 ### 6.1 硬件资源
@@ -283,7 +284,7 @@ Linux系统配置完成。
 
 运行命令
 
-    kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+    kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')&env.IPALLOC_RANGE=10.10.10.0/24"
 
 ![LAB01: Setup Kubernetes](./images/101-lab01-setup-kubernetes-28.png)
 
