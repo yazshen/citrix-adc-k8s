@@ -6,7 +6,7 @@
 
 ## 1. 实验拓扑
 
-![](./images/101-lab2-topology.png)
+![](./images/101-lab02-topology.png)
 
 ## 2. 基本概念
 
