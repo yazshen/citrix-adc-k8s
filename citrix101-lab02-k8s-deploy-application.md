@@ -2,7 +2,7 @@
 
 ## 更新时间
 
-2021.01.24
+2021.02.28
 
 ## 1. 实验拓扑
 
@@ -74,6 +74,14 @@ kubectl describe pod citrix101-lab02-demo1
 ```
 
 ![](./images/101-lab2-k8s-deploy-application-04.png)
+
+获取容器的Shell
+
+```
+kubectl exec citrix101-lab02-demo1 -- ls -lah
+```
+
+![](./images/101-lab2-k8s-deploy-application-04a.png)
 
 SSH到2个Node节点（Worker1, Worker2)，然后查看当前正在运行的container信息
 

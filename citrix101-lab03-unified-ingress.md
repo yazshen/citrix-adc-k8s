@@ -2,7 +2,7 @@
 
 ## 更新时间
 
-2021.01.26
+2021.02.28
 
 ## 1. 实验拓扑
 
@@ -41,10 +41,10 @@ kubectl get deployments -o wide
 通过curl命令访问这4个Pod IP地址，确认业务访问
 
 ```
-curl http://10.36.0.2
-curl http://10.36.0.3
-curl http://10.44.0.2
-curl http://10.44.0.3
+curl http://10.10.10.65
+curl http://10.10.10.66
+curl http://10.10.10.193
+curl http://10.10.10.194
 ```
 
 ![](./images/101-lab03-k8s-unified-ingress-04.png)
@@ -217,8 +217,8 @@ kubectl apply -f citrix101-lab03-demo05.yaml
 ```
 kubectl expose deployment citrix101-lab03-demo05 --type=NodePort --name=citrix101-lab03-demo05-nodeport --port=8080 --target-port=80
 kubectl get svc -o wide
-curl http://10.100.227.224:8080
-curl http://192.168.204.11:31513
+curl http://10.106.185.244:8080
+curl http://192.168.204.12:31321
 ```
 
 ![](./images/101-lab03-k8s-unified-ingress-45.png)
@@ -231,10 +231,10 @@ kubectl create secret  generic nslogin --from-literal=username='nsroot' --from-l
 
 ![](./images/101-lab03-k8s-unified-ingress-46.png)
 
-查看Citrix Ingress Controller的yaml配置文件"citrix-k8s-ingress-controller.yaml"
+查看Citrix Ingress Controller的yaml配置文件"citrix101-lab03-demo05-cic-k8s-ingress-controller-vpx.yaml"，留意Prefix和Ingress Class的值
 
 ```
-cat citrix-k8s-ingress-controller.yaml
+cat citrix101-lab03-demo05-cic-k8s-ingress-controller-vpx.yaml
 ```
 
 ![](./images/101-lab03-k8s-unified-ingress-47.png)
@@ -242,7 +242,7 @@ cat citrix-k8s-ingress-controller.yaml
 部署这个yaml文件，然后查看pod信息
 
 ```
-kubectl apply -f citrix-k8s-ingress-controller.yaml
+kubectl apply -f citrix101-lab03-demo05-cic-k8s-ingress-controller-vpx.yaml
 kubectl get deployments -o wide
 kubectl get pods -o wide
 ```
@@ -251,7 +251,9 @@ kubectl get pods -o wide
 
 查看ingress配置文件"citrix101-lab03-demo05-ingress.yaml"，在这个yaml文件里面通过Annotation功能配置了Load Balancing的VIP地址信息并关联ingress.class为"citrix"
 
+```
 cat citrix101-lab03-demo05-ingress.yaml
+```
 
 ![](./images/101-lab03-k8s-unified-ingress-49.png)
 

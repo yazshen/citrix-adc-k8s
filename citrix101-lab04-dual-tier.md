@@ -2,7 +2,7 @@
 
 ## 更新时间
 
-2021.01.27
+2021.02.28
 
 ## 1. 实验拓扑
 
@@ -37,12 +37,12 @@ kubectl get svc -o wide
 
 ![](./images/101-lab04-k8s-dual-tier-03.png)
 
-查看并部署ingress的yaml配置文件"citrix101-lab04-demo01-ingress.yaml"，注意"kubernetes.io/ingress.class"为"cpx"，此ingress用于Tier-2的CPX设备实现流量管理
+查看并部署ingress的yaml配置文件"citrix101-lab04-demo01-ingress-cpx.yaml"，注意"kubernetes.io/ingress.class"为"citrix-cic-cpx"，此ingress用于Tier-2的CPX设备实现流量管理
 
 ```
-cat citrix101-lab04-demo01-ingress.yaml
-kubectl apply -f citrix101-lab04-demo01-ingress.yaml
-kubectl get ingress0 -o wide
+cat citrix101-lab04-demo01-ingress-cpx.yaml
+kubectl apply -f citrix101-lab04-demo01-ingress-cpx.yaml
+kubectl get ingress -o wide
 ```
 
 ![](./images/101-lab04-k8s-dual-tier-04.png)
@@ -50,7 +50,7 @@ kubectl get ingress0 -o wide
 查看CPX和CIC的yaml配置文件，注意这个CIC使用了sidecar方式部署并且不需要认证信息
 
 ```
-cat citrix-k8s-ingress-controller-cpx-cic.yaml
+cat citrix101-lab04-demo01-cic-k8s-ingress-controller-cpx.yaml
 ```
 
 ![](./images/101-lab04-k8s-dual-tier-05.png)
@@ -58,7 +58,7 @@ cat citrix-k8s-ingress-controller-cpx-cic.yaml
 部署这个yaml文件，然后查看pod, deployment, service运行状态
 
 ```
-kubectl apply -f citrix-k8s-ingress-controller-cpx-cic.yaml
+kubectl apply -f citrix101-lab04-demo01-cic-k8s-ingress-controller-cpx.yaml
 kubectl get deployments -o wide -l app=citrix101-lab04-demo01-cpx-ingress
 kubectl get pods -o wide -l app=citrix101-lab04-demo01-cpx-ingress
 kubectl get svc -o wide -l app=citrix101-lab04-demo01-cpx-service
@@ -66,7 +66,7 @@ kubectl get svc -o wide -l app=citrix101-lab04-demo01-cpx-service
 
 ![](./images/101-lab04-k8s-dual-tier-06.png)
 
-查看并部署ingress的yaml配置文件"citrix101-lab04-demo01-ingress-vpx.yaml"，注意"kubernetes.io/ingress.class"为"Citrix"，此ingress用于Tier-1的VPX设备实现流量管理
+查看并部署ingress的yaml配置文件"citrix101-lab04-demo01-ingress-vpx.yaml"，注意"kubernetes.io/ingress.class"为"citrix-cic-vpx"，此ingress用于Tier-1的VPX设备实现流量管理
 
 ```
 cat citrix101-lab04-demo01-ingress-vpx.yaml
@@ -92,6 +92,28 @@ kubectl get ingress -o wide
 
 ![](./images/101-lab04-k8s-dual-tier-12.png)
 
+CPX容器默认使用了随机密码，所以我们先通过访问CPX的Shell方式查询当前默认密码为"d0b9d32700514b99bd4fd023c6942a11"
+
+```
+kubectl get pods -o wide -l app=citrix101-lab04-demo01-cpx-ingress
+kubectl exec citrix101-lab04-demo01-cpx-ingress-79ff9b8f5c-r77f6 --container citrix101-lab04-demo01-cpx-ingress -- cat /var/deviceinfo/random_id
+
+```
+
+![](./images/101-lab04-k8s-dual-tier-18.png)
+
+通过SSH登录到CPX，然后查看当前配置信息
+
+```
+ssh nsroot@10.10.10.198
+cli_script.sh "show lb vserver -summary"
+cli_script.sh "show cs vserver -summary"
+```
+
+![](./images/101-lab04-k8s-dual-tier-19.png)
+
+
+
 ## 3. Demo(2): 一键配置安全策略 (CRD)
 
 打开Student客户端的浏览器， 然后访问域名: http://lab04-demo01.example.com/test
@@ -101,8 +123,8 @@ kubectl get ingress -o wide
 SSH登录到Master节点，然后查看和部署Citrix CRD自定义资源"citrix101-lab04-demo02-crd.yaml"
 
 ```
-cat citrix-lab04-demo02-crd.yaml
-kubectl apply -f citrix-lab04-demo02-crd.yaml
+cat citrix101-lab04-demo02-crd.yaml
+kubectl apply -f citrix101-lab04-demo02-crd.yaml
 kubectl get customresourcedefinitions -o wide
 ```
 
