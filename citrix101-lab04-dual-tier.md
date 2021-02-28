@@ -151,3 +151,9 @@ kubectl get rewritepolicies.citrix.com -o wide
 
 ![](./images/101-lab04-k8s-dual-tier-17.png)
 
+登录到Citrix ADC(VPX)管理界面，查看Responder相关配置
+
+![](./images/101-lab04-k8s-dual-tier-20.png)
+
+![](./images/101-lab04-k8s-dual-tier-21.png)
+
