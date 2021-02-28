@@ -1,7 +1,7 @@
 # LAB01: 安装配置Kubernetes环境
 
 ## 更新时间
-2021.01.26
+2021.02.28
 
 ## 1. 实验拓扑
 ![LAB01: Setup Kubernetes](./images/101-lab01-topology.png)
